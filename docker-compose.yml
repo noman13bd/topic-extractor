@@ -1,0 +1,23 @@
+version: '3'
+services:
+  # Service for running the news aggregator manually
+  news_aggregator:
+    build: .
+    container_name: news_aggregator
+    volumes:
+      - ./data:/app/data
+    command: python app/main.py 
+    restart: "no"           
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # Service for running the scheduler, which fetches data every hour
+  scheduler:
+    build: .
+    container_name: scheduler
+    volumes:
+      - ./data:/app/data
+    command: python app/scheduler.py
+    restart: always             
+    environment:
+      - PYTHONUNBUFFERED=1
