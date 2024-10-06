@@ -57,7 +57,7 @@ This will:
 
 ### 3. Filtering by Keywords or Date
 
-Once articles and topics are saved, you can filter them using the criteria you choose.
+Once articles and topics are saved, you can filter them using the criteria you choose. You can modify the filter in the file `app/main.py`. keyword in line 27 and filter date in line 30.
 
 - Filter by Keyword: Searches for articles containing the specified keyword.
     - Filtered data will be saved in `data/filtered_by_keyword.json`.
